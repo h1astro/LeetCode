@@ -1,6 +1,7 @@
 @[TOC](LeetCode-字符串转换整数atoi)
 
 ## 题目回顾
+
 [传送门](https://leetcode-cn.com/problems/reverse-integer/)
 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
 
@@ -29,7 +30,6 @@
 
 ## 题解
 
-> 可参考py，使用正则匹配 [\[题解\]](https://leetcode-cn.com/problems/string-to-integer-atoi/solution/python-1xing-zheng-ze-biao-da-shi-by-knifezhu/)
 > 时间复杂度是 $O(n)$
 > 空间复杂度$O(1)$
 > 执行用时：$16 ms$
@@ -98,3 +98,27 @@ public:
     }
 };
 ```
+
+## python正则匹配 
+
+> 搬运py使用正则匹配 [\[题解\]](https://leetcode-cn.com/problems/string-to-integer-atoi/solution/python-1xing-zheng-ze-biao-da-shi-by-knifezhu/)
+
+```python
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        return max(min(int(*re.findall('^[\+\-]?\d+', s.lstrip())), 2**31 - 1), -2**31)
+```
+
+使用正则表达式：
+
+```
+^：匹配字符串开头
+[\+\-]：代表一个+字符或-字符
+?：前面一个字符可有可无
+\d：一个数字
++：前面一个字符的一个或多个
+\D：一个非数字字符
+*：前面一个字符的0个或多个
+```
+
+`max(min(数字, 2**31 - 1), -2**31)` 用来防止结果越界
