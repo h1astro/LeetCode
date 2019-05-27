@@ -63,6 +63,31 @@
 
 $$dp[i]=dp[i-1]+dp[i-2]$$
 
+## cpp代码实现
+
+```c++
+class Solution {
+public:
+    int climbStairs(int n) {
+        if(n==1){
+            return 1;            
+        }
+        int *count=(int *)malloc(sizeof(int)*(n+1));    
+        for(int i=0;i<n+1;i++){
+            count[i]=0;
+        }
+        count[0]=0;
+        count[1]=1;
+        count[2]=2;
+        for(int i=3;i<=n;i++){
+            count[i]=count[i-1]+count[i-2];
+        }
+
+        return count[n];
+    }
+};
+```
+
 
 
 ## python代码实现
