@@ -54,35 +54,40 @@
 
 ```python
 class Solution(object):
-    def spiralOrder(self, matrix):
+    def spiralOrder(self, n):
         """
         :type matrix: List[List[int]]
         :rtype: List[int]
         """
-        if not matrix:
-            return []
+        matrix=[]
+        for i in range(n):
+            matrix.append([0 for i in range(n)])
         head_row=0
         rail_row=len(matrix)-1      #当前尾部的行数索引
         l_col=0
         r_col=len(matrix[0])-1      #当前最右边的列数索引
-        res=[]
+        count=1
         while head_row<=rail_row and l_col<=r_col:
             for i in range(l_col,r_col+1):          #1.从左到右遍历首行的所有元素  
-                res.append(matrix[head_row][i])
+                matrix[head_row][i]=count
+                count=count+1
             head_row=head_row+1                     #更新当前首行
             if head_row>rail_row: 
                 break
             for i in range(head_row,rail_row+1):    #2.从上到下遍历最右列所有元素
-                res.append(matrix[i][r_col])
+                matrix[i][r_col]=count
+                count=count+1
             r_col=r_col-1                           #更新当前最右列
             if r_col<l_col:
                 break
             for i in range(r_col,l_col-1,-1):       #3.从右向左遍历尾行所有元素
-                res.append(matrix[rail_row][i])
+                matrix[rail_row][i]=count
+                count=count+1
             rail_row=rail_row-1                     #更新当前尾行
             for i in range(rail_row,head_row-1,-1): #4.从下到上遍历最左列所有元素
-                res.append(matrix[i][l_col])        
+                matrix[i][l_col]=count   
+                count=count+1   
             l_col=l_col+1                           #更新当前最左列
 
-        return res
+        return matrix
 ```
