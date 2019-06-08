@@ -26,7 +26,7 @@
 
 ## 题解
 
-> 参考[题解](https://leetcode-cn.com/problems/merge-sorted-array/solution/zui-jian-dan-de-cha-ru-pai-xu-by-newcoderlife/)]
+> 参考[题解](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/mai-mai-gu-piao-de-zui-jia-shi-ji-by-leetcode/)和[更好的算法dp](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-tao-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-xiang/)
 > 时间复杂度: $O(n)$， 
 > 空间复杂度: $O(1)$
 > 执行用时：$12 ms$ 
@@ -79,6 +79,3 @@ int main(){
     return 0;
 }
 ```
-
-
-
