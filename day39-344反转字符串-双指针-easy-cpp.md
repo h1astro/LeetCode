@@ -28,7 +28,7 @@
 
 ## 题解
 
-> 参考[题解](https://leetcode-cn.com/problems/reverse-string/)
+> 参考[题解](https://leetcode-cn.com/problems/reverse-string/solution/cxiang-xi-ti-jie-by-youlookdeliciousc-6/)
 > 时间复杂度: $O(\frac{n}{2})$， 
 > 空间复杂度$O(1)$
 > 执行用时：$8 ms$
